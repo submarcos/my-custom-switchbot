@@ -8,7 +8,7 @@ import voluptuous as vol
 
 # Import the device class from the component that you want to support
 import homeassistant.helpers.config_validation as cv
-from homeassistant.components.switch import (PLATFORM_SCHEMA, SERVICE_TURN_ON)
+from homeassistant.components.switch import (PLATFORM_SCHEMA, SwitchEntity)
 from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME, CONF_MAC, CONF_ID, CONF_NAME
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -45,7 +45,7 @@ def setup_platform(
     add_entities([MySwitchBot(bot)])
 
 
-class AwesomeLight(SwitchBotEntity):
+class MySwitchBot(SwitchEntity):
     """Representation of an Awesome Light."""
 
     def __init__(self, bot) -> None:
