@@ -1,0 +1,1 @@
+"""Custom SwitchBot bot integration."""
